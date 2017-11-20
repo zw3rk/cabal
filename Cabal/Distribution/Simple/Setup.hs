@@ -996,7 +996,7 @@ data InstallFlags = InstallFlags {
 defaultInstallFlags :: InstallFlags
 defaultInstallFlags  = InstallFlags {
     installPackageDB = NoFlag,
-    installDest      = NoFlag,
+    installDest      = Flag NoCopyDest,
     installDistPref  = NoFlag,
     installUseWrapper = Flag False,
     installInPlace    = Flag False,
