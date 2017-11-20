@@ -41,6 +41,7 @@ import Distribution.PackageDescription.Parse
          ( sourceRepoFieldDescrs )
 import Distribution.Simple.Compiler
          ( OptimisationLevel(..), DebugInfoLevel(..) )
+import Distribution.Simple.InstallDirs ( CopyDest (NoCopyDest) )
 import Distribution.Simple.Setup
          ( Flag(Flag), toFlag, fromFlagOrDefault
          , ConfigFlags(..), configureOptions
@@ -502,6 +503,7 @@ convertToLegacySharedConfig
     installFlags = InstallFlags {
       installDocumentation     = mempty,
       installHaddockIndex      = projectConfigHaddockIndex,
+      installDest              = Flag NoCopyDest,
       installDryRun            = projectConfigDryRun,
       installReinstall         = mempty, --projectConfigReinstall,
       installAvoidReinstalls   = mempty, --projectConfigAvoidReinstalls,
